@@ -44,3 +44,5 @@ from .search import Search  # noqa
 from .status import Status  # noqa
 from .tokens import Tokens  # noqa
 from .version import Version  # noqa
+
+from .report import InsightsReport
