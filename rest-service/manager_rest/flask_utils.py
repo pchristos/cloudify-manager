@@ -77,6 +77,13 @@ def get_postgres_conf(manager_ip='localhost'):
     )
 
 
+def get_insights_report_url():
+    """Return the URL used to fetch the Insights report"""
+    manager_config.load_configuration()
+    url = manager_config.insights_report_url or 'https://mist.io/'
+    return url.strip('/') + '/api/v1/report'
+
+
 def set_flask_security_config(app, hash_salt=None, secret_key=None):
     """Set all necessary Flask-Security configurations
 

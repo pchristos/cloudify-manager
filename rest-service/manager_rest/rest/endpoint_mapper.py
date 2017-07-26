@@ -81,7 +81,8 @@ def setup_resources(api):
         'FileServerAuth': 'file-server-auth',
         'LdapAuthentication': 'ldap',
         'Secrets': 'secrets',
-        'SecretsKey': 'secrets/<string:key>'
+        'SecretsKey': 'secrets/<string:key>',
+        'InsightsReport': 'report',
     }
 
     # Set version endpoint as a non versioned endpoint
