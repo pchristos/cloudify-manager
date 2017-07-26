@@ -22,6 +22,8 @@ from manager_rest.storage import get_storage_manager
 
 from manager_rest.security import SecuredResource
 
+from manager_rest.flask_utils import get_insights_report_url
+
 from manager_rest.manager_exceptions import NotFoundError
 from manager_rest.manager_exceptions import ManagerException
 from manager_rest.manager_exceptions import UnauthorizedError
@@ -38,7 +40,7 @@ class InsightsReport(SecuredResource):
         Get the Insights report
         """
         token = get_storage_manager().get(models.Secret, 'insights_token')
-        report = requests.get('https://mist.io/api/v1/report',
+        report = requests.get(get_insights_report_url(),
                               params=request.args,
                               headers={'Authorization': token.value})
         if not report.ok:

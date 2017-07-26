@@ -49,6 +49,8 @@ class Config(object):
         self.max_results = 1000
         self.min_available_memory_mb = None
 
+        self.insights_report_url = None
+
         self.security_hash_salt = None
         self.security_secret_key = None
         self.security_encoding_alphabet = None
